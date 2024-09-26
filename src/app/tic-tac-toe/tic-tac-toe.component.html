@@ -3,13 +3,15 @@
 <div class="board">
   @for (cell of board; track $index) {
     <div class="cell" (click)="makeMove($index)">
-      {{ cell }}
+      {{ cell || '-' }}
     </div>
   }
 </div>
 
 @if (winner) {
-  <div class="status">
+  <div id="status">
     {{ winner }} wins!
   </div>
+
+  <button id="reset" (click)="reset()">Reset</button>
 }

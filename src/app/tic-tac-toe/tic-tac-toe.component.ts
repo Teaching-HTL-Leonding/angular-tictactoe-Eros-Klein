@@ -18,6 +18,10 @@ export class TicTacToeComponent {
       this.player = this.player === 'X' ? 'O' : 'X';
       this.checkWinner();
     }
+
+    if(!this.board.includes('') && this.winner === "") {
+      this.winner = "Nobody";
+    }
   }
 
   checkWinner() {
@@ -37,7 +41,7 @@ export class TicTacToeComponent {
   }
 
   reset() {
-    this.board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '];
+    this.board = ['', '', '', '', '', '', '', '', ''];
     this.player = 'X';
     this.winner = "";
   }
