@@ -1,1 +1,15 @@
-<p>tic-tac-toe works!</p>
+<h1>Tic Tac Toe</h1>
+
+<div class="board">
+  @for (cell of board; track $index) {
+    <div class="cell" (click)="makeMove($index)">
+      {{ cell }}
+    </div>
+  }
+</div>
+
+@if (winner) {
+  <div class="status">
+    {{ winner }} wins!
+  </div>
+}
